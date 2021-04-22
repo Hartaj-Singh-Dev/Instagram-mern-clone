@@ -1,29 +1,33 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const multer = require('multer');
-const bodyparser = require('body-parser');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const app = express();
 
 
 
 dotenv.config({path:'config.env'})
-
+require('./Database/connection')
 const port = process.env.PORT
 
-require('./Database/connection')
 
 //Middleware
 app.use(express.json())
-app.use(require("./Routes/user"))
-app.use('/uploads',express.static('upload'))
+app.use(cookieParser())
+
+
+app.use(cors({origin:"http://localhost:3000",credentials:true}))
+app.use(require("./Routes/route.js"))
+
+
 
 //Routes
 app.get('/',(req,res)=>{
     res.status(200).send("Hello from the home page")
 })
 
-app.post('/upload',(req,res)=>{
-    res.status(200).send(req.body)
+app.post('/reg',(req,res)=>{
+    res.send("rykdjgccg")
 })
 
 
