@@ -2,7 +2,8 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router()
 const emailvalidator = require('email-validator');
-const Users  =require('../models/appSchema')
+const Users  =require('../models/userSchema')
+const Auth = require("../middleware/Auth")
 require("../Database/connection")
 
 
@@ -51,7 +52,7 @@ router.post('/signin',async(req,res)=>{
             const passcom = await bcrypt.compare(password,userexist.password)
             if(passcom){
                  token = await userexist.generateAuthToken()
-                await res.cookie("authToken",token,{httpOnly:true,secure:true,sameSite:'none'})
+                await res.cookie("authToken",token,{httpOnly:true,sameSite:'none',secure:true})
                 res.status(200).json({Message:"Logged succuesfully"})
             }else{
                 res.status(404).json({Error:"Sorry invalid Data"})
@@ -63,6 +64,10 @@ router.post('/signin',async(req,res)=>{
     }catch(err){
         console.log(err);
     }
+})
+
+router.get("/Userdata",Auth,(req,res)=>{
+    res.send("here is the token")
 })
 
 
