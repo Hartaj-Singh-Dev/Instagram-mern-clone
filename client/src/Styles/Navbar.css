@@ -1,0 +1,31 @@
+nav.full-nav{
+    width: 100%;
+    height: 3.5rem;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.nav-header{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+}
+
+div.nav-header .links{
+    display: flex;
+    width: 13rem;
+    justify-content: space-between;
+}
+
+div.nav-header  h1.navlinks{
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    
+}
+div.nav-header  h1.navlinks:hover{
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
