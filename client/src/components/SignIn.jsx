@@ -2,9 +2,9 @@ import React from 'react'
 
 const SignIn = () => {
     return (
-        <div>
+        <React.Fragment>
             <h1>mjmgtw</h1>
-        </div>
+        </React.Fragment>
     )
 }
 

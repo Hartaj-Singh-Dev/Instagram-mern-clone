@@ -7,6 +7,7 @@ import Home from './components/Home'
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import {reducer , initialState} from './Reducer/userRed'
+import HomeSign from './components/HomeSign';
 
 export const userContext = createContext()
 
@@ -15,21 +16,21 @@ function App() {
   
   const Routelog = ()=>{
     return(
-      <div>
+      <>
         <Route path='/' exact component={Home}/>  
         {/* <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/> */}
          
-      </div>
+      </>
     )
   }
   const RouteSign = ()=>{
     return(
-      <div>
+      <>
+        <Route path='/' exact component={HomeSign}/>  
         <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/>
-        
-      </div>
+      </>
     )
   }
 
@@ -39,7 +40,7 @@ function App() {
       { state ? <Navlog/> : <Navbar/>}
       <Switch>
         {state ? <Routelog/>: <RouteSign/>}
-        <Route component={Error} />
+        
       </Switch>
       </userContext.Provider>
     </Fragment>

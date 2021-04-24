@@ -18,14 +18,9 @@ div.nav-header .links{
     justify-content: space-between;
 }
 
-div.nav-header  h1.navlinks{
+div.nav-header  h2.navlinks{
     color: black;
     text-decoration: none;
     font-size: 1.1rem;
     
-}
-div.nav-header  h1.navlinks:hover{
-    color: black;
-    text-decoration: none;
-    font-size: 1.1rem;
 }
