@@ -4,6 +4,7 @@ import {Switch,Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Navlog from './components/Navlog';
 import Home from './components/Home'
+import Profile from './components/Profile'
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import {reducer , initialState} from './Reducer/userRed'
@@ -17,7 +18,8 @@ function App() {
   const Routelog = ()=>{
     return(
       <>
-        <Route path='/' exact component={Home}/>  
+        <Route path='/' exact component={Home}/>
+        <Route path='/profile' exact component={Profile}/>  
         {/* <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/> */}
          

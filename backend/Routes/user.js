@@ -12,8 +12,8 @@ router.get("/get",(req,res)=>{
 })
 
 router.post('/signup', async (req,res)=>{
-    const {name,email,password,cpassword} = req.body
-    if(!name && !email && !password && !cpassword){
+    const {name,email,phone,password} = req.body
+    if(!name && !email && !phone && !password ){
         res.status(404).json({Error:"Something missing"})
     }
     try{
@@ -24,13 +24,11 @@ router.post('/signup', async (req,res)=>{
         else if(!emailvalidator.validate(email)){
             res.status(404).json({Error:"Email not valid"})
         }
-        else if (password !== cpassword){
-            res.status(404).json({Error:"Password Not matched"})
-        }else if(password.length < 5){
+        else if(password.length < 5){
             res.status(404).json({Error:"Make the password strong"})
         }
         else{
-            const newUser = new Users({name,email,password,cpassword})
+            const newUser = new Users({name,email,phone,password})
             await newUser.save()
             res.status(200).json({Message:"User Registered Succuesfully"})
         } 
@@ -53,7 +51,7 @@ router.post('/signin',async(req,res)=>{
             if(passcom){
                  token = await userexist.generateAuthToken()
                 await res.cookie("authToken",token,
-                // {httpOnly:true,sameSite:'none',secure:true}
+                {httpOnly:true,sameSite:'none',secure:true}
                 )
                 res.status(200).json({Message:"Logged succuesfully"})
             }else{

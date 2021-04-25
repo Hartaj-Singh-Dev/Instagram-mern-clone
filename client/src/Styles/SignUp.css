@@ -47,7 +47,7 @@ div.centerSignUpDiv div.form {
   align-items: center;
 }
 form.Signup-form button.SignUp-button{
-  margin: 1rem 0 0 0 ;
+  margin: 1rem 0 -1.4rem 0 ;
   padding: 0.5rem 0;
   color: #ffff;
   background: #d6249f;
@@ -73,7 +73,7 @@ form.Signup-form button.SignUp-button:active{
 }
 
 div.sigin-link{
-  margin: 1rem 0 0 0;
+  margin: 0.3rem 0 0 0;
 }
 
 div.formInput input {
@@ -85,4 +85,8 @@ div.formInput input {
 }
 div.formInput input:focus{
   border-bottom: 3px solid rgb(53, 168, 0);
+}
+h6.ServerError{
+  color: red;
+  font-size: 12px;
 }

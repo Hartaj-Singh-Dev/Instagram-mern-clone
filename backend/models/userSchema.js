@@ -17,12 +17,12 @@ const userSchema = new mongoose.Schema({
     unique: true,
     min: 10,
   },
-  password: {
-    type: String,
-    require: true,
-    trim: true,
+  phone:{
+    type:Number,
+    require:true,
+    trim:true
   },
-  cpassword: {
+  password: {
     type: String,
     require: true,
     trim: true,
@@ -45,7 +45,6 @@ const userSchema = new mongoose.Schema({
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 12);
-    this.cpassword = await bcrypt.hash(this.cpassword, 12);
   }
   next();
 });

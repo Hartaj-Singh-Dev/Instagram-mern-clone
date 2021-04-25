@@ -52,7 +52,7 @@ const Navbar = () => {
                   <FavoriteBorderOutlinedIcon className="icon" />
                 </IconButton>
               </NavLink>
-              <NavLink to="/myaccount" className="nav-link">
+              <NavLink to="/profile" className="nav-link">
           
                 <IconButton>
            
