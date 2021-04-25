@@ -19,7 +19,7 @@ const HomeSign = () => {
               <NavLink to="/signin"><a className='signin-link'>SignIn</a></NavLink>
             </button>
             <button type='submit' className="signUp">
-              <NavLink to="/signup" ><a className='signup-link'>SigUp</a></NavLink>
+              <NavLink to="/signup" ><a className='signup-link'>SignUp</a></NavLink>
             </button >
           </div>
         </div>

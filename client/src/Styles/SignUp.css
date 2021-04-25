@@ -1,0 +1,134 @@
+div.centerSignUpDiv {
+  height: 90.8vh;
+  width: 100%;
+}
+div.centerSignUpDiv div.Div {
+  width: 750px !important;
+  margin: 8% 0 0 20%;
+  border: 0.2px solid #ffff;
+  border-radius: 20px;
+  background-color: #ffff;
+  height: 400px;
+  width: 580px;
+  padding: 0 0 0 30px;
+}
+div.centerSignUpDiv .logo {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+div.centerSignUpDiv .logo img.logo {
+  height: 150px;
+  width: 300px;
+}
+div.centerSignUpDiv div.divider {
+  display: flex;
+  padding: 0 50px 0 50px;
+}
+div.centerSignUpDiv div.Links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+div.centerSignUpDiv div.Links button.signIn {
+  margin: 0 0 7.5rem 0;
+}
+div.centerSignUpDiv div.Links button.signUp {
+  margin: 0.7rem 0 0 0;
+}
+
+div.centerSignUpDiv div.Links button {
+  margin: 0 0 7.5rem 0;
+  border: none;
+  color: #ffff;
+  padding: 1rem 0 1rem 0;
+  text-decoration: none;
+  outline-width: 0;
+  background: #1e5799;
+  cursor: pointer;
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 1.5rem;
+}
+div.centerSignUpDiv div.Links button:active {
+  box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -webkit-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -moz-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+}
+
+div.centerSignUpDiv div.Links button a {
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 1rem 0 1rem;
+}
+
+div.centerSignUpDiv div.form form.Signup-form {
+  display: flex;
+  flex-direction: column;
+}
+form.Signup-form div.formInput {
+  margin: 0 0 1rem 0;
+}
+form.Signup-form div.formInput i {
+  margin: 0 10px 0 0;
+}
+
+
+div.centerSignUpDiv div.form {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form.Signup-form button.SignUp-button{
+  margin: 1rem 0 0 0 ;
+  padding: 0.5rem 0;
+  color: #ffff;
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border: none;
+  border-radius: 11px;
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+form.Signup-form button.SignUp-button:active{
+  box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -webkit-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -moz-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+}
+
+div.sigin-link{
+  margin: 1rem 0 0 0;
+}
+
+div.formInput input {
+  outline-width: 0;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 3px solid black;
+  /* transition: ease-in-out, border-bottom .35s ease-in-out; */
+}
+div.formInput input:focus{
+  border-bottom: 3px solid rgb(53, 168, 0);
+}
