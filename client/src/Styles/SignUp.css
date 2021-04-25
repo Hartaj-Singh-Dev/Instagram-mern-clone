@@ -27,52 +27,6 @@ div.centerSignUpDiv div.divider {
   display: flex;
   padding: 0 50px 0 50px;
 }
-div.centerSignUpDiv div.Links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-div.centerSignUpDiv div.Links button.signIn {
-  margin: 0 0 7.5rem 0;
-}
-div.centerSignUpDiv div.Links button.signUp {
-  margin: 0.7rem 0 0 0;
-}
-
-div.centerSignUpDiv div.Links button {
-  margin: 0 0 7.5rem 0;
-  border: none;
-  color: #ffff;
-  padding: 1rem 0 1rem 0;
-  text-decoration: none;
-  outline-width: 0;
-  background: #1e5799;
-  cursor: pointer;
-  background: #d6249f;
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 1.5rem;
-}
-div.centerSignUpDiv div.Links button:active {
-  box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
-  -webkit-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
-  -moz-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
-}
-
-div.centerSignUpDiv div.Links button a {
-  color: #ffff;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 0 1rem 0 1rem;
-}
 
 div.centerSignUpDiv div.form form.Signup-form {
   display: flex;

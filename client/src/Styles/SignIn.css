@@ -1,0 +1,88 @@
+div.centerSignInDiv {
+  height: 90.8vh;
+  width: 100%;
+}
+div.centerSignInDiv div.SignInDiv {
+  width: 750px !important;
+  display: flex;
+  margin: 8% 0 0 20%;
+  border: 0.2px solid #ffff;
+  border-radius: 20px;
+  background-color: #ffff;
+  height: 400px;
+  width: 580px;
+  padding: 0 0 0 30px;
+}
+div.centerSignInDiv div.SignInDiv div.logo {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+div.SignInDiv div.logo img.logo {
+  height: 150px;
+  width: 300px;
+}
+div.SignInDiv div.divider {
+  display: flex;
+  padding: 0 50px 0 50px;
+}
+
+div.SignInDiv div.form form.SignIn-form {
+  display: flex;
+  flex-direction: column;
+}
+form.SignIn-form div.formInput {
+  margin: 0 0 1.5rem 0;
+}
+form.SignIn-form div.formInput i {
+  margin: 0 10px 0 0;
+}
+
+div.SignInDiv div.form {
+  width: 19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.form form.SignIn-form button.SignIn-button {
+  margin: 1.5rem 0 0 0;
+  padding: 0.5rem 0;
+  color: #ffff;
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border: none;
+  border-radius: 11px;
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+div.form form.SignIn-form button.SignIn-button:active {
+  box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -webkit-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+  -moz-box-shadow: 2px 2px 19px -7px rgba(0, 0, 0, 0.83);
+}
+
+div.sigup-link {
+  margin: 1.5rem 0 0 0;
+}
+
+div.form form.SignIn-form div.formInput input {
+  outline-width: 0;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 3px solid black;
+  /* transition: ease-in-out, border-bottom .35s ease-in-out; */
+}
+div.form form.SigIn-form div.formInput input:focus {
+  border-bottom: 3px solid rgb(53, 168, 0);
+}
