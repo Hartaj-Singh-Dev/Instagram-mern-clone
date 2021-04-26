@@ -25,11 +25,11 @@ const Home = () => {
       <div className="homePage">
         <div className="cardPost">
           <div className="postHeader">
-            <div className="avatar" style={{width:'3rem'}}>
-            <Avatar alt="" src="" style={{height:'2rem',width:'2rem'}}/>
+            <div className="avatar">
+            <Avatar alt="" src="" />
             </div>
             <div className="headerName">
-              <h3 style={{fontSize:'14px'}}>Username</h3>
+              <h3>Username</h3>
             </div>
           </div>
           <div className="postPic">
@@ -41,15 +41,15 @@ const Home = () => {
                <i className={like.Unicode} style={{color:like.color}}></i>
            </button>
             </div>
-            <div className="likes" style={{marginTop:'-1rem',marginLeft:'0.5rem'}}>
-            <h5>{like.count} <span style={{fontSize:'12px',fontWeight:'700'}}>likes</span></h5>
+            <div className="likes" >
+            <h5>{like.count} <span>likes</span></h5>
             </div>
             <div className="postCaption">
               <p>Lorem ipsum dolor sit amet consectetu
               </p>
             </div>
             
-            <div className="commentBox" style={{marginTop:'3.2rem'}}>
+            <div className="commentBox">
             <hr/>
               <input type="text"  placeholder='Add Comment' value={addCom} onChange={(event)=>{setaddCom(event.target.value)}}/>
               <button>Post</button>
