@@ -3,7 +3,8 @@ import "../Styles/Navlog.css";
 import LOGO from '../Images/LOGO.png';
 import { NavLink } from "react-router-dom";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import {Avatar} from '@material-ui/core';
+import AvatarPic from '../Images/AvatarPic.jpg';
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined";
 import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
@@ -53,16 +54,16 @@ const Navbar = () => {
                 </IconButton>
               </NavLink>
               <NavLink to="/profile" className="nav-link">
-          
+                 
                 <IconButton>
-           
-                  <AccountCircleIcon className="icon" />
+                <Avatar alt="Remy Sharp" src={AvatarPic} />
                 </IconButton>
               </NavLink>
             </div>
           </div>
         </div>
       </nav>
+      <hr/>
     </Fragment>
   );
 };

@@ -1,13 +1,19 @@
-import React from 'react'
+import { useState } from "react";
+import React from "react";
 
 const Home = () => {
-    return (
-        <React.Fragment>
-            <h1>
-            HI
-            </h1>
-        </React.Fragment>
-    )
-}
+    const [iconClass, seticonClass] = useState('far fa-heart')
 
-export default Home
+    const Like = ()=>{
+        seticonClass('fas fa-heart')
+    }
+  return (
+    <React.Fragment>
+      <button style={{background:'transparent',border:'none',cursor:'pointer'}} onClick={Like()}>
+        <i class={iconClass}></i>
+      </button>
+    </React.Fragment>
+  );
+};
+
+export default Home;

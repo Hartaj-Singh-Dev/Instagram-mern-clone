@@ -29,7 +29,13 @@ function App() {
   const RouteSign = ()=>{
     return(
       <>
-        <Route path='/' exact component={HomeSign}/>  
+        {/* <Route path='/' exact component={HomeSign}/>  */}
+
+         {/* Demo Link for development and production */}
+          <Route path='/' exact component={Home}/>
+         <Route path='/profile' exact component={Profile}/> 
+         {/* Demo Link for development and production */}
+
         <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/>
       </>
@@ -39,7 +45,8 @@ function App() {
   return (
     <Fragment>
     <userContext.Provider value={{state,dispatch}}>
-      { state ? <Navlog/> : <Navbar/>}
+      <Navlog/>
+      {/* { state ? <Navlog/> : <Navbar/>} */}
       <Switch>
         {state ? <Routelog/>: <RouteSign/>}
         

@@ -1,78 +1,87 @@
-.nav{
-    width: 100%;
-    display: flex;
-    /* position: fixed; */
-    /* top: 0; */
-    height: 3.5rem;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffff;
+.nav {
+  width: 100%;
+  display: flex;
+  /* position: fixed; */
+  /* top: 0; */
+  height: 2.8rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70vw;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
 }
-.navbar > .header{
-    padding: 14px 0 0 0;
+.navbar > .header {
+  padding: 14px 0 0 0;
 }
-.header img.text-logo{
-    width: 7rem;
-    height: 2.3rem;
+.header img.text-logo {
+  width: 7rem;
+  height: 2.3rem;
 }
-
-.icon{
-    margin: 0 0px 0 0;
-}
-.nav-link{
-    text-decoration: none;
-    outline: none;
-    margin: 0 -10px 0 0;
-    border: none;
-}
-.nav-link h1{
-   color: black;
-   font-weight: 400;
+div.navbar div.icons{
+  width: 14rem;
 }
 
- .input{
-    height: 1.7rem;
-    display: flex;
-    border: 0.1px solid gray;
-    align-items: center;
-    width: 14rem;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: #fafafa;
-} 
-
-.input  input{
-    background-color: #fafafa;
-    text-align: center;
-    height: 1.5rem;
-    width: 12rem;
-    transition: text-align 2s  0 2s;
-    border-bottom: 0.1px solid gray ;
-    border-top:  0.1px solid gray;
-    outline-width: 0;
-    border: none;
+.icon {
+  margin: 0 0px 0 0;
+}
+.nav-link {
+  text-decoration: none;
+  outline: none;
+  margin: 0 -10px 0 0;
+  border: none;
+}
+.nav-link h1 {
+  color: black;
+  font-weight: 400;
 }
 
-.input > button{
-    background: none;
-    background-color: #fafafa ;
-    border: none;
-    width: 1rem;
-    cursor: pointer;
+.input {
+  height: 1.7rem;
+  display: flex;
+  border: 0.1px solid gray;
+  align-items: center;
+  width: 14rem;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #fafafa;
 }
 
-.input input:focus{
-    text-align: left;
+.input input {
+  background-color: #fafafa;
+  text-align: center;
+  height: 1.5rem;
+  width: 12rem;
+  transition: text-align 2s 0 2s;
+  border-bottom: 0.1px solid gray;
+  border-top: 0.1px solid gray;
+  outline-width: 0;
+  border: none;
 }
 
-.MuiSvgIcon-root{
-    color: black;
-    font-weight:300;
-  } 
+.input > button {
+  background: none;
+  background-color: #fafafa;
+  border: none;
+  width: 1rem;
+  cursor: pointer;
+}
+
+.input input:focus {
+  text-align: left;
+}
+
+.MuiSvgIcon-root {
+  color: black;
+  font-weight: 300;
+}
+
+@-moz-document url-prefix() {
+  div.header div.icons {
+    width: 18rem;
+  }
+}
