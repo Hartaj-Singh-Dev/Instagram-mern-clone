@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import {reducer , initialState} from './Reducer/userRed'
 import HomeSign from './components/HomeSign';
+import CreatePost from './components/CreatePost';
 
 export const userContext = createContext()
 
@@ -34,6 +35,7 @@ function App() {
          {/* Demo Link for development and production */}
           <Route path='/' exact component={Home}/>
          <Route path='/profile' exact component={Profile}/> 
+         <Route path='/createPost' exact component={CreatePost}/>
          {/* Demo Link for development and production */}
 
         <Route path='/signup' exact component={SignUp} />  
