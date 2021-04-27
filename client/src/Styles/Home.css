@@ -52,7 +52,9 @@ div.postFoot div.likes h5 span {
 div.cardPost div.postFoot div.postCaption{
     margin: -1rem 0 0 0.5rem ;
 }
-
+div.postFoot div.commentBox {
+    margin:3rem 0 0 0;
+}
 div.postFoot div.commentBox input{
     margin: 0 0 0 5px;
     height: 1.5rem;
@@ -69,6 +71,4 @@ div.postFoot div.commentBox button{
     font-weight: 700;
     font-size: medium;
 }
-div.postFoot div.commentBox {
-  margin:2.2rem 0 0 0;
-}
+
