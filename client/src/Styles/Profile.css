@@ -12,3 +12,12 @@ div.gallary{
 } 
 
 
+div.profileDiv div.Postbutton button.postButton{
+  padding: 0.5rem 1rem;
+  color: #fff;
+  margin: 1rem 0 0 0;
+  background-color: #42b3ff;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+}

@@ -20,7 +20,8 @@ function App() {
     return(
       <>
         <Route path='/' exact component={Home}/>
-        <Route path='/profile' exact component={Profile}/>  
+        <Route path='/profile' exact component={Profile}/> 
+        <Route path='/createPost' exact component={CreatePost}/> 
         {/* <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/> */}
          

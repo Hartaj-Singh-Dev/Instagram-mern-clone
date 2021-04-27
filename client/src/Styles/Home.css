@@ -5,70 +5,10 @@ div.homePage{
     flex-wrap: wrap;
     justify-content:center;
 }
-div.homePage div.cardPost{
-    height: 52rem;
+div.centerPosts{
+    height: 100%;
     width: 32rem;
-    border: 0.001px solid rgb(170, 170, 170);
-    border-radius: 5px;
-}
-div.cardPost div.postHeader{
-    align-items: center;
-    display: flex;
-    margin: 0 0 0 1rem;
-    width: 100%;
-    height: 4rem;
-}
-div.postHeader div.avatar{
-    width: 3rem;
-}
-div.avatar Avatar{
-    height: 2rem;
-    width: 2rem;
-}
-div.headerName{
-    font-size: 14px;
-}
-div.cardPost div.postPic{
-    height: 37rem;
-    width: 100%;
-}
-div.cardPost div.postFoot{
-    height: 11rem;
-    width: 100%;
-    /* margin: 0 0 0 0.5rem; */
-}
-div.cardPost div.postFoot div.icons{
- /* margin:0 0 0 -6px; */
- margin: 0 0 0 0.5rem;
-}
-div.postFoot div.likes{
-    margin:-1rem 0 0 0.5rem;
-}
-div.postFoot div.likes h5 span {
-    font-size: 12px;
-    font-weight: 700px;
-}
-
-div.cardPost div.postFoot div.postCaption{
-    margin: -1rem 0 0 0.5rem ;
-}
-div.postFoot div.commentBox {
-    margin:3rem 0 0 0;
-}
-div.postFoot div.commentBox input{
-    margin: 0 0 0 5px;
-    height: 1.5rem;
-    border: none;
-    outline-width: 0;
-    background: transparent;
-    width: 89%;
-}
-div.postFoot div.commentBox button{
-    color:rgb(4, 93, 196);
-    background:transparent;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: medium;
+    display: grid;
+    grid-row-gap: 4rem;
 }
 

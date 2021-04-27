@@ -1,0 +1,53 @@
+div.createpostFull{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+div.centerCreatePost{
+    width: 25rem;
+    height: 35rem;
+    border: 0.1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.caption textarea{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+div.ImagePreview{
+    height: 17rem;
+    width: 100%;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+div.submitbutton button.submitButton{
+    background-color: rgb(34, 157, 228);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem 1rem;
+}

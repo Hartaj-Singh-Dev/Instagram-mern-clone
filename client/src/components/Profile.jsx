@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/Profile.css";
 import Pic from "../Images/AvatarPic.jpg";
+import {NavLink} from 'react-router-dom'
 
 const Profile = () => {
   return (
@@ -67,6 +68,9 @@ const Profile = () => {
             </div>
             <h5 style={{marginTop:'-0.5rem',color:'gray'}}>Genius</h5>
           </div>
+          <div className="Postbutton">
+        <NavLink to='/createPost'><button className="postButton">CreatePost</button></NavLink>
+        </div>
         </div>
         <div className="gallary" style={{width:'70vw', display:'grid',marginTop:'1rem'}}>
           <img src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80" alt="" style={{height:'19rem',width:'19rem'}}/>
