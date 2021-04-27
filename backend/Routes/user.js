@@ -71,5 +71,11 @@ router.get("/Userdata",Auth,(req,res)=>{
     res.send("here is the token")
 })
 
+router.get('/logout',(req,res)=>{
+    console.log('logouted');
+    res.clearCookie('authToken',{path:'/'})
+    res.status(200).json({Message:"LogedOut"})
+})
+
 
 module.exports = router

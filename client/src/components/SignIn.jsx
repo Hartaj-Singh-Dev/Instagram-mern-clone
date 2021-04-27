@@ -74,7 +74,7 @@ const SignIn = () => {
               >
                 SignIn
               </button>
-              <h6>{ServerError}</h6>
+              <h6 style={{color:'red'}}>{ServerError}</h6>
             </form>
             <div className="sigup-link">
               <NavLink to="/signup">

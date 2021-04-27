@@ -10,6 +10,7 @@ import SignIn from './components/SignIn';
 import {reducer , initialState} from './Reducer/userRed'
 import HomeSign from './components/HomeSign';
 import CreatePost from './components/CreatePost';
+import Logout from './components/Logout';
 
 export const userContext = createContext()
 
@@ -22,8 +23,10 @@ function App() {
         <Route path='/' exact component={Home}/>
         <Route path='/profile' exact component={Profile}/> 
         <Route path='/createPost' exact component={CreatePost}/> 
+        <Route path='/logout' exact component={Logout}/>
         {/* <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/> */}
+
          
       </>
     )
@@ -31,14 +34,13 @@ function App() {
   const RouteSign = ()=>{
     return(
       <>
-        {/* <Route path='/' exact component={HomeSign}/>  */}
-
+        <Route path='/' exact component={HomeSign}/> 
          {/* Demo Link for development and production */}
-          <Route path='/' exact component={Home}/>
+          {/* <Route path='/' exact component={Home}/>
          <Route path='/profile' exact component={Profile}/> 
-         <Route path='/createPost' exact component={CreatePost}/>
+         <Route path='/createPost' exact component={CreatePost}/> */}
          {/* Demo Link for development and production */}
-
+         <Route path='/logOut' exact component={Logout}/>
         <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/>
       </>
@@ -48,11 +50,9 @@ function App() {
   return (
     <Fragment>
     <userContext.Provider value={{state,dispatch}}>
-      <Navlog/>
-      {/* { state ? <Navlog/> : <Navbar/>} */}
+      { state ? <Navlog/> : <Navbar/>}
       <Switch>
         {state ? <Routelog/>: <RouteSign/>}
-        
       </Switch>
       </userContext.Provider>
     </Fragment>
