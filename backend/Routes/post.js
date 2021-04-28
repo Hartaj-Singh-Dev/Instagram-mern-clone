@@ -18,13 +18,14 @@ router.get("/getPost",Auth,async(req,res)=>{
 
 router.post("/createPost",Auth,async (req,res)=>{
     try{
-    const {title,body} = req.body
-    if(!title || !body || !title && !body){
+    const {body,pic} = req.body
+    console.log(req.body);
+    if(!body || !pic|| !body && !pic ){
         return res.status(400).json({Error:'Please Fill the data'})
     }
     req.rootUser.password = undefined
     const post = new Posts({
-        title:title , body: body, Postby:req.rootUser
+         body: body, Postby:req.rootUser,photo:pic
     })
 
     post.save()
@@ -38,7 +39,7 @@ router.post("/createPost",Auth,async (req,res)=>{
 router.get('/myPost',Auth,async(req,res)=>{
     try{
     const data = await Posts.find({Postby:req.userID}).populate('Postby','_id name')
-    res.send(data)
+    res.status(200).send(data)
     }catch(err){
         console.log(err);
         res.status(404).json({Error :err})

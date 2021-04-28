@@ -6,10 +6,12 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "*",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "cra-template": "1.1.2",
     "fetch": "^1.1.0",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",

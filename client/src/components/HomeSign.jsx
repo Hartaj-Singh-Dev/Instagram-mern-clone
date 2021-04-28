@@ -15,7 +15,7 @@ const HomeSign = () => {
             <hr />
           </div>
           <div className="Links">
-            <button className="signIn">
+           <button type="submit" className="signIn">
               <NavLink to="/signin"><a className='signin-link'>SignIn</a></NavLink>
             </button>
             <button type='submit' className="signUp">
