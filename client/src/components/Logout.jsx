@@ -15,7 +15,9 @@ const Logout = () => {
             credentials:'include'
         }).then(()=>{
             dispatch({type:"USER",payload:false})
-            history.push('/')}
+            localStorage.setItem('LoggedIn',false)
+            history.push('/')
+        }
         ).catch((err)=>{console.log(err);})
     }
     useEffect(() => {

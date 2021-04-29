@@ -1,4 +1,4 @@
-import { React ,useState} from "react";
+import { React ,useEffect,useLayoutEffect,useState} from "react";
 import "../Styles/Profile.css";
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -7,6 +7,7 @@ import Pic from "../Images/AvatarPic.jpg";
 import { NavLink } from "react-router-dom";
 
 const Profile = () => {
+  const [MypostPic, setMypostPic] = useState([])
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -16,6 +17,25 @@ const Profile = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const getmyPosts = ()=>{
+    fetch("http://localhost:8000/myPost",{
+      method:"GET",
+      headers:{
+        "Content-type":'application/json'
+      },
+      credentials:'include'
+    }).then(function(res){
+      return res.json()
+    }).then(function(data){
+     setMypostPic(data.Myposts)
+      console.log(data.Myposts);
+    }).catch((err)=>{console.log(err);})
+  }
+
+  useEffect(() => {
+   getmyPosts()
+  }, [])
+
   return (
     <>
       <div
@@ -126,56 +146,17 @@ const Profile = () => {
           className="gallary"
           style={{ width: "70vw", display: "grid", marginTop: "1rem" }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
+          {MypostPic.map(link=>{
+            return(
+              <img
+              key={link._id}
+            src={link.photo}
             alt=""
             style={{ height: "19rem", width: "19rem" }}
           />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=801&q=80"
-            alt=""
-            style={{ height: "19rem", width: "19rem" }}
-          />
+            )
+          })}
+        
         </div>
       </div>
     </>

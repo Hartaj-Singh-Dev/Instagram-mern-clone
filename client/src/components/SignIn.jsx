@@ -39,8 +39,9 @@ const SignIn = () => {
       setServerError(data.Error)
       console.log(data.Error);
     }else{
-      setServerError('')
       dispatch({type:"USER",payload:true})
+      setServerError('')
+      localStorage.setItem('LoggedIn',state)
       history.push("/profile")
     }
   };

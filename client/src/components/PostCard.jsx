@@ -33,7 +33,7 @@ const PostCard = (props) => {
             </div>
           </div>
           <div className="postPic">
-            <img src={props.imageUrl} alt="" style={{height:"37rem",width:'100%'}}  loading='lazy'/>
+            <img src={props.imageUrl} alt="" style={{height:"33rem",width:'100%'}}  loading='lazy'/>
           </div>
           <div className="postFoot">
             <div className="icons">
@@ -50,6 +50,8 @@ const PostCard = (props) => {
             </div>
             
             <div className="commentBox">
+              <div className="comments">
+              </div>
             <hr/>
               <input type="text"  placeholder='Add Comment' value={addCom} onChange={(event)=>{setaddCom(event.target.value)}}/>
               <button onClick={()=>{setaddCom('')}}>Post</button>

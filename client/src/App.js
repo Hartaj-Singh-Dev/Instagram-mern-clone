@@ -1,6 +1,6 @@
-import {React , createContext,useReducer,Fragment} from 'react'
+import {React , createContext,useReducer,Fragment, useEffect} from 'react'
 import './App.css';
-import {Switch,Route} from 'react-router-dom'
+import {Switch,Route, Redirect} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Navlog from './components/Navlog';
 import Home from './components/Home'
@@ -14,18 +14,27 @@ import Logout from './components/Logout';
 
 export const userContext = createContext()
 
+
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  
+  let [state, dispatch] = useReducer(reducer, initialState)
+  useEffect(() => {
+    localStorage.setItem('state',state)
+    localStorage.setItem('LoggedIn',false)
+  }, [state])
+  useEffect(() => {
+    console.log(localStorage.getItem('state'))
+    console.log(localStorage.getItem('LoggedIn'))
+  }, [])
   const Routelog = ()=>{
     return(
       <>
+      <Switch>
         <Route path='/' exact component={Home}/>
         <Route path='/profile' exact component={Profile}/> 
         <Route path='/createPost' exact component={CreatePost}/> 
         <Route path='/logout' exact component={Logout}/>
-        {/* <Route path='/signup' exact component={SignUp} />  
-        <Route  path='/signin' exact component={SignIn}/> */}
+        <Redirect to='/'/>
+        </Switch>
 
          
       </>
@@ -34,15 +43,12 @@ function App() {
   const RouteSign = ()=>{
     return(
       <>
+       <Switch>
         <Route path='/' exact component={HomeSign}/> 
-         {/* Demo Link for development and production */}
-          {/* <Route path='/' exact component={Home}/>
-         <Route path='/profile' exact component={Profile}/> 
-         <Route path='/createPost' exact component={CreatePost}/> */}
-         {/* Demo Link for development and production */}
-         <Route path='/logOut' exact component={Logout}/>
         <Route path='/signup' exact component={SignUp} />  
         <Route  path='/signin' exact component={SignIn}/>
+        <Redirect to='/'/>
+        </Switch>
       </>
     )
   }
@@ -50,10 +56,10 @@ function App() {
   return (
     <Fragment>
     <userContext.Provider value={{state,dispatch}}>
+      {/* { islogged ? <Navlog/> : <Navbar/>}
+       { islogged ? <Routelog/>: <RouteSign/>} */}
       { state ? <Navlog/> : <Navbar/>}
-      <Switch>
-        {state ? <Routelog/>: <RouteSign/>}
-      </Switch>
+       {state ? <Routelog/>: <RouteSign/>}
       </userContext.Provider>
     </Fragment>
   );

@@ -1,11 +1,11 @@
-import React from "react";
+import { React,useEffect} from "react";
 import LOGO from "../Images/LOGO.png";
 import "../Styles/HomeSign.css";
 import { NavLink } from "react-router-dom";
 
 const HomeSign = () => {
   return (
-    <React.Fragment>
+    <>
       <div className="centerDiv">
         <div className="Div">
           <div className="logo">
@@ -24,7 +24,7 @@ const HomeSign = () => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

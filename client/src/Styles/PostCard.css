@@ -1,5 +1,5 @@
 div.cardPost{
-    height: 52rem;
+    height: 54rem;
     width: 32rem;
     border: 0.001px solid rgb(170, 170, 170);
     border-radius: 5px;
@@ -22,11 +22,11 @@ div.headerName{
     font-size: 14px;
 }
 div.cardPost div.postPic{
-    height: 37rem;
+    height: 35rem;
     width: 100%;
 }
 div.cardPost div.postFoot{
-    height: 11rem;
+    height: 14rem;
     width: 100%;
     /* margin: 0 0 0 0.5rem; */
 }
@@ -44,10 +44,15 @@ div.postFoot div.likes h5 span {
 
 div.cardPost div.postFoot div.postCaption{
     margin: -1rem 0 0 0.5rem ;
+    height: 5rem;
 }
-div.postFoot div.commentBox {
-    margin:3rem 0 0 0;
+div.postFoot div.commentBox div.comments{
+    margin: -1rem 0 0 0.5rem ;
+    height: 3.5rem;
 }
+/* div.postFoot div.commentBox {
+    margin:4rem 0 0 0;
+} */
 div.postFoot div.commentBox input{
     margin: 0 0 0 5px;
     height: 1.5rem;

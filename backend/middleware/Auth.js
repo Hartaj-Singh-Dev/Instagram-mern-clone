@@ -9,9 +9,9 @@ const Auth = async (req,res,next) => {
             _id: verify._id,
             "tokens.token": Token,
         })
-        if(!rootUser){
-            res.status(400).json({Error:"User not Found"})
-        }
+        // if(!rootUser){
+        //     res.status(400).json({Error:"User not Found"})
+        // }
 
         req.Token = Token;
         req.rootUser = rootUser;
