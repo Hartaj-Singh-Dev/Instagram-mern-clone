@@ -19,11 +19,11 @@ const Profile = () => {
   };
   const getmyPosts = ()=>{
     fetch("http://localhost:8000/myPost",{
+      credentials:'include',
       method:"GET",
       headers:{
         "Content-type":'application/json'
       },
-      credentials:'include'
     }).then(function(res){
       return res.json()
     }).then(function(data){

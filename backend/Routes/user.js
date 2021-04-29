@@ -49,7 +49,7 @@ router.post('/signin',async(req,res)=>{
         if(userexist){
             const passcom = await bcrypt.compare(password,userexist.password)
             if(passcom){
-                 token = await userexist.generateAuthToken()
+                token = await userexist.generateAuthToken()
                 await res.cookie("authToken",token,
                 {httpOnly:true,sameSite:'none',secure:true}
                 )

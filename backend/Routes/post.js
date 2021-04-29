@@ -34,7 +34,7 @@ router.post("/createPost",Auth,async (req,res)=>{
         console.log(err);
         res.status(400).json({Error:err})
     }
-})
+}) 
 
 router.get('/myPost',Auth,async(req,res)=>{
     try{
@@ -44,8 +44,71 @@ router.get('/myPost',Auth,async(req,res)=>{
         console.log(err);
         res.status(404).json({Error :err})
     }
+})
 
+router.put('/like',Auth,async(req,res)=>{
+    console.log(req.userID);
+    try{
+     await Posts.findByIdAndUpdate(req.body.postId,{
+           $push:{Likes:req.userID}
+       },{
+           new:true
+       },function(err,doc){
+           if(err){
+               console.log(err);
+               res.send(err)
+           }else{
+               console.log(doc);
+               res.send(doc)
+           }
+       })
 
+    }catch(err){
+        console.log(err);
+        res.status(404).json({Error:"Something Error Occured"})
+    }
+})
+
+router.put('/dislike',Auth,async(req,res)=>{
+    console.log("Disliked");
+    console.log(req.body.postId);
+    try{
+       await Posts.findByIdAndUpdate(req.body.postId,{
+           $pull:{Likes:req.userID}
+       },{
+           new:true
+       },function(err,doc){
+        if(err){
+            console.log(err);
+            res.send(err)
+        }else{
+            console.log(doc);
+            res.send(doc)
+        }
+    })
+
+    }catch(err){
+        console.log(err);
+        res.status(404).json({Error:"Something Error Occured"})
+    }
+})
+
+router.put('/comment',Auth,async(req,res)=>{
+    try{
+        const comment = {
+            text:req.body.text,
+            Postby:req.userID
+        }
+       await Posts.findByIdAndUpdate(req.body.postId,{
+           $push:{comment:comment}
+       },{
+           new:true
+       }.populate("comments.Postby",'_id name'))
+
+    }catch(err){
+        console.log(err);
+        res.status(404).json({Error:"Something Error Occured"})
+    }
 })
 
 

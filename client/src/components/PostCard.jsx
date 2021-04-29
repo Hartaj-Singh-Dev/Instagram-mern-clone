@@ -1,24 +1,48 @@
-import {React,useState} from 'react'
+import {React,useContext,useState} from 'react'
 import '../Styles/PostCard.css'
 import {Avatar} from '@material-ui/core';
 
 const PostCard = (props) => {
+ const postId =  props.postId
+ const [Likes, setLikes] = useState(0)
     const [addCom, setaddCom] = useState('')
     const [like, setlike] = useState({
       Unicode:'far fa-heart fa-2x',
       color:'black',
-      count:0
+      count:Likes
     })
   
-    const Like = ()=>{
+    const Like = (props)=>{
       let {Unicode,color,count} = like
        count += 1
       if(Unicode === 'far fa-heart fa-2x'){
-        setlike({Unicode:'fas fa-heart fa-2x',color:'red',count:count})
+        
+       fetch("http://localhost:8000/like",{
+          credentials:'include',
+          method:"PUT",
+          headers:{
+            "Content-type":'application/json'
+          },
+          body:JSON.stringify({postId:postId})
+        }).then(function(res){return res.json()}).then((data)=>{setLikes(data.Like.length)
+          console.log(data);}).catch((err)=>{console.log(err);})
+          setlike({Unicode:'fas fa-heart fa-2x',color:'red',count:count})
+        
       }else{
         let{count} = like
-        count = count - 1 
-       setlike({Unicode:'far fa-heart fa-2x',color:'black',count:count})
+        count = count - 1     
+        fetch("http://localhost:8000/dislike",{
+          credentials:'include',
+          method:"PUT",
+          headers:{
+            "Content-type":'application/json'
+          },
+          body:JSON.stringify({postId:postId})
+        }).then(function(res){return res.json()}).then((data)=>{setLikes(data.Like.length)
+        console.log(data);
+        }).catch((err)=>{console.log(err);})
+        setlike({Unicode:'far fa-heart fa-2x',color:'black',count:count})
+       
       }
     }
     return (

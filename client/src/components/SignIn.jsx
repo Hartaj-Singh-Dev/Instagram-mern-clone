@@ -41,7 +41,7 @@ const SignIn = () => {
     }else{
       dispatch({type:"USER",payload:true})
       setServerError('')
-      localStorage.setItem('LoggedIn',state)
+      localStorage.setItem('LoggedIn',true)
       history.push("/profile")
     }
   };
