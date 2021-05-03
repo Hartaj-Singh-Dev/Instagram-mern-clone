@@ -70,9 +70,9 @@ router.put('/like',Auth,async(req,res)=>{
 })
 
 router.put('/dislike',Auth,async(req,res)=>{
-    console.log("Disliked");
-    console.log(req.body.postId);
     try{
+        console.log("Disliked");
+    console.log(req.body.postId);
        await Posts.findByIdAndUpdate(req.body.postId,{
            $pull:{Likes:req.userID}
        },{
@@ -103,7 +103,13 @@ router.put('/comment',Auth,async(req,res)=>{
            $push:{comment:comment}
        },{
            new:true
-       }.populate("comments.Postby",'_id name'))
+       }.populate("comments.Postby",'_id name')).exec((err,doc)=>{
+           if(err){
+               console.log(err);
+           }else{
+               console.log(doc);
+           }
+       })
 
     }catch(err){
         console.log(err);

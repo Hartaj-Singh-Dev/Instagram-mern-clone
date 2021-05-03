@@ -1,10 +1,11 @@
-import {React,useContext,useState} from 'react'
+import {React,useState} from 'react'
 import '../Styles/PostCard.css'
 import {Avatar} from '@material-ui/core';
 
 const PostCard = (props) => {
  const postId =  props.postId
  const [Likes, setLikes] = useState(0)
+ const [AddCom, setAddCom] = useState('')
     const [addCom, setaddCom] = useState('')
     const [like, setlike] = useState({
       Unicode:'far fa-heart fa-2x',
@@ -15,8 +16,7 @@ const PostCard = (props) => {
     const Like = (props)=>{
       let {Unicode,color,count} = like
        count += 1
-      if(Unicode === 'far fa-heart fa-2x'){
-        
+      if(Unicode === 'far fa-heart fa-2x'){  
        fetch("http://localhost:8000/like",{
           credentials:'include',
           method:"PUT",
@@ -45,6 +45,23 @@ const PostCard = (props) => {
        
       }
     }
+    const makeComment = ()=>{
+      setAddCom(addCom)
+      console.log(addCom);
+      console.log(AddCom);
+      // fetch('http://localhost:8000/comment',{
+      //   method:"PUT",
+      //   credentials:'include',
+      //   headers:{
+      //     "Content-type":"application/json"
+      //   },
+      //   body:JSON.stringify({text:AddCom,postID:postId})
+      // })
+      setaddCom('')
+      setAddCom('')
+    }
+
+
     return (
         <>
         <div className="cardPost">
@@ -74,11 +91,13 @@ const PostCard = (props) => {
             </div>
             
             <div className="commentBox">
-              <div className="comments">
+              <div className="comments">{AddCom}
               </div>
             <hr/>
+            <form>
               <input type="text"  placeholder='Add Comment' value={addCom} onChange={(event)=>{setaddCom(event.target.value)}}/>
-              <button onClick={()=>{setaddCom('')}}>Post</button>
+              <button onClick={()=>{makeComment()}}>Post</button>
+            </form>
             </div>
           </div>
         </div>
